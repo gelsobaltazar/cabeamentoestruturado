@@ -165,195 +165,168 @@ onecolumn]{scrartcl}	 					% KOMA-article class
 	%% ====================================
 	%% ====================================
 	\section{Introdução}
-	Explique nesta primeira seção qual seria o perfil do caso. Perfil do cliente, quantidade de colaboradores, quantidade de equipamentos de TI atualmente.
 	
-	Indique também nesta seção o escopo do projeto.
+	O presente documento será baseado em um provedor de internet. Atualmente a empresa possui 6 funcionários.
+		O presente projeto tem por objetivo documentar a estrutura física de cabeamento na empresa para que possa trazer maior segurança aos técnicos que necessitarem realizar manutenções.
+		O principal objetivo é documentar o estado atual do rack onde os dispositivos estão alocados e solucionar problemas encontrados por falta de documentação.		
 	
-	Apresente um overview do parque tecnológico do caso.
+	
 	\subsection{Benefícios}
-	Explique quais seriam os benefícios provenientes após a execução deste projeto.
+		\begin{itemize}
+		\item Facilidade e agilidade na manutenção
+		\item Claro entendimento de cada cabo e sua respectiva conexão
+		\item Maior segurança e confiança para realizar manutenções
+		\end{itemize}
 	
 	\subsection{Organizações Envolvidas}
-	Coloque o nome de todas as organizações envolvidas. Se for um projeto real, identifique quais as responsabilidades de cada uma das organizações. É comum que em um projeto de redes (cabeamento), temos várias organizações, sendo que cada uma delas com uma determinada responsabilidade.
-	
-	Sugestão: crie uma tabela contento a relação delas.
+		\begin{tabular}{|l|l|}
+			\hline
+			\textbf{Organização}                 & \textbf{Responsabilidade}                                                                                                                                          \\ \hline
+			Organização 01                       & \begin{tabular}[c]{@{}l@{}}Cabeamento elétrico:\\ - Organizar cabeamento de rede elétrico\\ - Identificar cabeamento no rack e sua respectiva conexão\end{tabular} \\ \hline
+			\multicolumn{1}{|c|}{Organização 02} & \begin{tabular}[c]{@{}l@{}}Cabeamento óptico:\\ - Organizar cabeamento ótico\\ - Identificar cabeamento no rack e sua respectiva conexão\end{tabular}              \\ \hline
+		\end{tabular}
 	
 	
 	
 	\section{Estado atual}
-	Aprente o estado atual da rede. Caso não tenha rede, desconsiderar esta seção.
-	
-	Caso tenha rede, deixe claro:
+	Atualmente a rede está instalada com cabeamento ótico e elétrico. Os equipamentos estão acomodados em um rack de piso 44U 19". No momento, por motivo de reestruração do cabeamento óptico, alguns cabos não estão acomodados corretamente até o término da manutenção.
 	\begin{itemize}
-		\item os passivos de rede atuais:path panels, cabos, etc..;
-		\item as principais reclamações dos usuários. Qual o principal motivo da reestruturação? Efetue uma pesquisa junto aos colaboradores para determinar quais problemas a rede apresenta.
-		\item Observações. Analise a rede e verifique se há estruturas que não se enquadram nas normas ou que indicam suspeita de problemas.
+		\item Passivos de rede: 
+			\item  - patch panel
+			\item  - cabo de rede CAT5
+			\item  - patch cord CAT5
+			\item  - cabo de rede CAT6
+			\item  - patch cord CAT6
+			\item  - cabo fibra óptica 36 FO
+			\item  - cabo fibra óptica 12 FO
+			\item  - DIO
+			\item  - patch cord fibra óptica SC/UPC
+			\item  - patch cord fibra óptica SC/APC
+			
+		\item as maiores reclamações dos usuários em relação ao cabeamento é a falta de documentação da mesma, pois isso causa insegurança na manutenção.Por esse motivo é necessário realizar a documentação do mesmo e reestruturar o cabeamento óptico para melhor acomodá-los aos DIO's.
+		
 	\end{itemize}
 	
 	\section{Requisitos}
-	Crie uma enumeração dos requisitos do projeto.
+	\begin{itemize}
+		\item Reorganizar cabeamento
+		\item Reorganizar equipamentos no rack
+		\item Manter disponibilidade dos serviços
+		\item Identificar cabeamento óptico e elétrico
+	\end{itemize}
 	
 	\section{Usuários e Aplicativos}
-	Explique nesta seção os usuários atuais e o perfil de crescimento, se por exemplo, há estimativa na evolução da empresa no que tange a quantidade de usuários, pontos de redes, equipamentos.
+	Atualmente os usuários utilizam aplicações web e mobile para interagir com o sistema. São sistemas que não demandam uso excessivo de banda na rede. Existem pontos de rede preparados para novas instalações em caso de contratação de novos funcionários.
 	
 	
 	\subsection{Usuários}
-	Crie uma relação da quantidade, perfil de usuários de seu projeto.
+	\begin{itemize}
+		\item 06 funcionários;
+		\item usuários de sistema web e mobile;
+	\end{itemize}
 	
 	\subsection{Aplicativos}
-	Crie uma relação dos aplicativos e seus níveis críticos de uso.
+	\begin{itemize}
+		\item sistema web;
+		\item sistema mobile;
+		\item Sistemas utilizados para receber pagamentos e abrir chamados de usuários;
+	\end{itemize}
 	
-	
-	\section{Estrutura predial existente}
-	
-	Explique aqui a planta física dos prédios
-	Pode ser anexada, em escala ou não.
-	
-	Deve conter uma descrição geral, indicando a possível distância entre os pontos de rede e restrições de instalação.
-	
+
 	\section{Planta Lógica - Elementos estruturados}
 	
 	\subsection{Estado atual}
 	Deve ter a planta atual, se for o caso
 	
+	\section{Estrutura predial existente}
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{planta}
+		\caption{Planta do prédio}
+		\label{planta}
+	\end{figure}
+	
+	Conforme a figura acima, pode-se ver que em cada divisória há um computador instalado e uma impressora de rede na mesma sala do PC 01.
+	Os pontos de rede estão instalados na parede. Cada computador possui seu ponto de rede.
+	Cada ponto de rede tem aproximadamente 10 metros de cabo até a sala do datacenter, onde há um patch panel que faz a ligação desse cabeamento com o switch. Os cabos estão passando por dentro de tubulação até a sala do datacenter.
+	
 	\subsection{Topologia}
-	Proposta futura, proposta após implantação.
-	Deve conter o diagrama da rede. Atente-se a redundância  e ligações truncadas.
-	Deve explicar todos termos e componentes utilizados nestas plantas. Por exemplo: entrance facility, work area, horizontal cabling, etc..
+	Após a implantação do cabeamento, a topologia da rede deverá estar como mostrado na figura 2. Os cabos da operadora irão chegar até o datacenter via fibra óptica subterrânea e deverá ser colocado em um DIO (Distribuidor Interno Óptico) para distribuição das fibras dentro do rack. 
+	Do roteador sairá um cabo de rede CAT6 com conectores blindados que será conectado à uma OLT(Optical Line Termination) que fornecerá internet à clientes via fibra óptica.
+	Do roteador sairá outro cabo de rede CAT6 com conectores blindados que estará interligado com o switch para rede interna. O switch estará conectado em um patch panel que fará a conexão com os computadores dentro da estrutura do prédio, conforme demonstrado na figra 1.
 	
-	Todos os elementos das figuras devem ser explicados. 
-	Crie esboço da configuração dos racks e brackets. Explique cada um dos componentes. Você pode criar uma tabela contendo figuras dentro, ou criar uma tabela e incluí-la como imagem. Por exemplo, verifique a tabela \ref{tab1}.
+	%\input{tab1}
+	\begin{figure}
+		\centering
+		\includegraphics[width=\textwidth]{topologia}
+		\caption{Topologia da rede}
+		\label{topologia}
+	\end{figure}
 	
-	\input{tab1}
-	
-	\subsection{Encaminhamento}
-	Eletrodutos, calhas, e qualquer material em que os cabos serão alojados/alocados.
 	
 	\subsection{Memorial descritivo}
 	
-	Relacione todos os equipamentos passivos que serão utilizados, tipo, fabricante, quantidade.
+	01 - Switch TP-Link TL-SG3424
+	01 - Switch TP-Link TL-SG1024
+	01 - Roteador Mikrotik CCR1016
+	01 - OLT DATACOM DM4610
+	01 - Patch Panel 24P Furukawa CAT6 Gigalan
+	10 - Patch Cord CAT6 Furukawa
+	01 - Patch Cord Óptico LC
+	04 - Jack RJ45 CAT6 FURUKAWA
 	
 	\subsection{Identificação dos cabos}
-	Explique como os cabos serão identificados em seu projeto. Coloque uma relação dos cabos instalados e identificados.
+	Os cabos serão identificados por numeração. Na parede onde está cada ponto de rede haverá um número, que deverá ser correspondente ao mesmo número no patch cord. Ex: Porta 1 do patch cord será o ponto 1 marcado na parede.
+	Para interligação dos equipamentos no rack, os cabos serão numerados nas duas pontas.
 	
 	\section{Implantação}
-	Estabeleça um cronograma de implantação:
-	Remoção de equipamentos existentes (destino para descarte), instalação dos condutores, instalação dos cabos, 
-	identificação dos cabos, montagem dos racks, certificação, etc... Crie atividades e estabeleça o tempo de execução. Se for um projeto real, indique também quais os responsáveis pela execução do projeto e de cada uma das etapas.
-	
-	Defina marcas (e padrões) e fornecedores se for o caso. Atenção a contratados e subcontratados para a realização das atividades. Estabeleça a responsabilidade de execução da atividade e também da validação dela.
-	
-	Utilize algum software para gerear o cronograma. Excel,etc. O fundamental é dividir em etapas, descrever e estimar o tempo de cada uma delas.
-	
-	Segue uma relação de ferramentas:
-	http://asana.com/, 
-	https://trello.com/, 
-	http://www.ganttproject.biz/, 
-	http://www.orangescrum.org/. 
+	A implantação deverá ser executado de madrugada para não causar indisponibilidade de serviços aos clientes durante período comercial. O projeto deverá ser concluído em até 4 dias.
+	Iniciando no dia 06/04/2019 a partir das 1:00 hr com término às 5:00. Conforme conograma abaixo:
+	Dia 01 - Cabeamento óptico:
+	\begin{itemize}
+		\item Organização;
+		\item Identificação;
+		\item Troca de equipamentos que forem necessários;
+		\item Certificação;
+		\item Documentação;
+	\end{itemize}
+	Dia 02 - Cabeamento elétrico:
+	\begin{itemize}
+		\item Organização;
+		\item Identificação;
+		\item Troca de equipamentos que forem necessários;		
+		\item Documentação;
+	\end{itemize}
+	Dia 03 - Configurações:
+	\begin{itemize}
+		\item Roteador;
+		\item Switchs;	
+		\item Documentação;
+	\end{itemize}	
 	
 	\section{Plano de certificação}
-	Quais seriam as etapas para a certificação? 
-	Quais os locais e horários para execução da certificação na rede? Toda rede será certificada?
-	Como os testes seriam executados?
-	Quais relatórios de certificação serão (ou deveriam ser) entregues? 
+	A certificação será realizada somente na rede óptica para identificar possíveis atenuações ou rompimentos. E a mesma deverá ser realizada no mesmo dia que em que serão ornigazados os cabos ópticos.
 	
 	\section{Plano de manutenção}
 	
-	Revisões periódicas na rede, emissão de certificados para novos pontos.
+	Revisões deverão ser realizadas a cada 12 meses.
 	
 	\subsection{Plano de expansão}
-	Existe um plano de expansão? Quantos novos pontos poderão ser acrecidos na rede, antes de migração de equipamentos na camada 2? Se houver expansão, quais equipamentos deverão ser direcionados para as estremidades da rede? 
+	Em caso de necessidade de expansão da rede, há 19 portas vagas no switch para novas instalações.  Para essas possíveis instalações, serão necessários apenas instalar os Jack RJ45 na parede e conectá-los ao patch panel, e do patch panel conectar um patch cord até o switch.
 	
 	\section{Risco}
-	Enumerar e explicar os riscos do projeto.
+	\begin{itemize}
+		\item Causar indisponibilidade do serviço após às 5:00;
+		\item Quebrar cabos ópticos;
+		\item Conectar cabos em portas errados;
+	\end{itemize}	
+	
 	
 	\section{Orçamento}
-	Crie uma relação de orçamentos baseado na seções anteriores.
+	Pelo fato de ser somente reorganização do rack, será cobrado valor de RS200,00 à hora de serviço, e equipamentos se forem necessários trocar. No valor mencionado está incluso a certificação.
 	
 	\section{Recomendações}
-	Observações e recomendações para o cliente.
-	
-	\section{Referências bibliográficas}
-	Utilize o mendley, o jabref ou diretamente o bibtex para gerenciar suas referências biliográficas. As referências são criadas automaticamente de acordo com o uso no texto.
-	
-	Exemplo: Redes de computadores, segundo \cite{t2013} é considerada..... Já \cite{kurose2010} apresenta uma versão...
-	
-	Analisando os pressupostos de \cite{ref3} e \cite{ref4} concluimos que....
-	
-	
-	\renewcommand\refname{} %%Referências bibliográficas}  
-	\bibliographystyle{ieeetr}
-	\bibliography{referencias}  
-	
-	%% ***********************************************************************
-	%% === remover daqui =====================================================
-	%% ***********************************************************************
-	=================================================
-	\section{Elementos textuais - Alguns exemplos}
-	
-	Esta seção apresenta exemplos de elementos textuais. \textbf{Remova-a da versão final do texto}.
-	
-	
-	\subsection{Colocar elementos em itens}
-	
-	Texto antes da lista
-	
-	\begin{itemize}
-		\item First item in a list 
-		\item Second item in a list 
-		\item Third item in a list
-	\end{itemize}
-	
-	\subsubsection{Uma subseção de terceiro nivel}
-	
-	Exemplo de uma subseção
-	
-	\subsection{Tabelas}
-	
-	Utilize o site http://www.tablesgenerator.com/ para elaborar as tabelas de seu trabalho.
-	Para adicionar uma tabela utilize: a tag input, passando o arquivo da tabela como parametro
-	
-	\input{tab2}
-	
-	Dentro do arquivo você deve definir o label e pode utilizá-lo para referenciar. Exemplo:
-	Na tab \ref{tab2} temos a relação de ....
-	
-	
-	Você também pode modificar a tabela manualmente, incluindo, por exemplo h! dentro de sua definição. Veja no exemplo tab2.tex
-	
-	\subsection{Figuras}
-	
-	As figuras podem ser no formato PDF, JPG, PNG. Você pode referenciá-las da mesma maneira que tabelas. Exemplo: A figura \ref{fig1} apresenta.....
-	
-	Não se preocupe o local em que a figura será renderizada em seu texto. Preocupe-se em criar referência para ela, ou seja, toda figura e tabela deve conter pelo menos uma referência no texto.
-	
-	\begin{figure}
-		\centering
-		\includegraphics[width=\textwidth]{fig1}
-		\caption{Exemplo de figura com escala horizontal}
-		\label{fig1}
-	\end{figure}
-	
-	
-	\begin{figure}
-		\centering
-		\includegraphics[]{fig2}
-		\caption{Exemplo de figura sem escala}
-		\label{fig2}
-	\end{figure}
-	
-	Você pode rotacionar figuras também. Para isso utilize o parâmetro angle=-90. Repare que a escala da figura foi modificada pelo parametro height. Você também pode utilizar scale
-	
-	\begin{figure}
-		\centering
-		\includegraphics[height=\textwidth,angle=-90]{fig3}
-		\caption{Exemplo de figura rotacionada}
-		\label{fig3}
-	\end{figure}
-	
-	
-	%% ***********************************************************************
-	%% === ate aqui    =====  ================================================
-	%% ***********************************************************************
+	É recomendado não realizar instalações ou manutenções sem o devido conhecimento. Para manutenções ou instalações é recomendado contratar técnicos especializados para que haja o melhor funcionamento da rede.
+
 	
 \end{document}
